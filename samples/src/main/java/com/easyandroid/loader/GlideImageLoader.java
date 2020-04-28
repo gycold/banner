@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.easyandroid.R;
 import com.easyandroid.banner.loader.ImageLoader;
@@ -26,8 +25,11 @@ public class GlideImageLoader extends ImageLoader {
     @Override
     public void displayImage(Context context, Object url, View view) {
         ImageView imageView = view.findViewById(R.id.iv_banner);
-        Glide.with(context).load(url)
-                .apply(options)
-                .into(imageView);
+//        Glide.with(context).load(url)
+//                .apply(options)
+//                .into(imageView);
+        GlideUtil.getInstance()
+                .loadRoundPicture((String) url, imageView);
+
     }
 }

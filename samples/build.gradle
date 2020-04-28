@@ -37,6 +37,7 @@ dependencies {
     implementation rootProject.ext.dependencies["fresco"]
     implementation rootProject.ext.dependencies["recovery"]
     implementation rootProject.ext.dependencies["legacy-support-v4"]
+    implementation 'jp.wasabeef:glide-transformations:3.1.1'
     implementation project(':banner')
 
     testImplementation 'junit:junit:4.12'

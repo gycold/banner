@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -59,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         listView = findViewById(R.id.list);
         View header = LayoutInflater.from(this).inflate(R.layout.header, null);
         banner = header.findViewById(R.id.banner);
-        banner.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, AppApplication.HEIGHT / 4));
         listView.addHeaderView(banner);
 
         String[] data = getResources().getStringArray(R.array.demo_list);

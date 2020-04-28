@@ -1,7 +1,9 @@
 # Android图片轮播控件
 [![banner](https://api.bintray.com/packages/easyandroid/maven/banner/images/download.svg)](https://bintray.com/easyandroid/maven/banner/_latestVersion)  [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://developer.android.google.cn/) [![SDK](https://img.shields.io/badge/minSdkVersion-15%2B-green.svg)](https://developer.android.com/about/)
 
-项目基于[banner](https://github.com/youth5201314/banner)升级改造，扩展了指示器的形状，可动态添加指示器等，sample基于Glide框架最新版本，后期会持续更新
++ 项目基于[banner](https://github.com/youth5201314/banner)升级改造，扩展了指示器的形状，可动态添加指示器等，sample基于Glide框架最新版本，后期会持续更新
++ 1.1.0开始，放弃了support库，请使用AndroidX
++ 内部自带混淆规则，无需在自己的项目中添加规则
 
 ## 使用步骤
 
@@ -9,7 +11,7 @@
 Gradle
 ```groovy
 dependencies{
-    implementation 'com.easyandroid:banner:1.0.2'  //最新版本
+    implementation 'com.easyandroid:banner:1.1.0'  //最新版本
 }
 ```
 
@@ -195,6 +197,7 @@ protected void onStop() {
 |BannerConfig.RIGHT| 指示器居右|setIndicatorGravity|
 |BannerConfig.PADDING_LEFT| banner左边距|setBannerPaddingLeft|
 |BannerConfig.PADDING_RIGHT| banner右边距|setBannerPaddingRight|
+|BannerConfig.BANNER_CORNER| banner圆角（需要在ImageLoader里面同时设置图片相同的圆角）|setBannerCorner|
 
 ## 方法
 |方法名|描述|版本限制
@@ -243,6 +246,7 @@ protected void onStop() {
 |banner_layout| reference |自定义banner布局文件，但是必须保证id的名称一样（你可以将banner的布局文件复制出来进行修改）
 |banner_padding_left| dimension |banner左边距
 |banner_padding_right| dimension |banner右边距
+|banner_corner| dimension |banner圆角
 |banner_background_resource| color/reference |整个banner布局背景，可以配合mLayoutResId实现自定义背景，注意使用引用资源，不可直接使用"#ffffff"这种形式
 
 
@@ -274,6 +278,10 @@ protected void onStop() {
 + [ViewPagerTransforms](https://github.com/ToxicBakery/ViewPagerTransforms)
 
 ## 更新说明
+
+#### v1.1.0
+ * 抛弃support库，使用AndroidX
+ * 添加`banner_corner`属性，使得banner可设置圆角，注意，如果使用此属性，需要继承ImageLoader，并给图片设置同样的圆角。
 
 #### v1.0.2
  * 添加`banner_padding_left`属性，使得banner可单独设置左边距

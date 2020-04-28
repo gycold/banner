@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -20,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -385,6 +387,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setImageList(List<?> imagesUrl) {
         if (imagesUrl == null || imagesUrl.size() <= 0) {
             bannerDefaultImage.setVisibility(VISIBLE);
@@ -404,8 +407,9 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
 //                imageView = new ImageView(context);
             }
             rootView.setPadding(bannerPaddingLeft, 0, bannerPaddingRight, 0);
-            GradientDrawable myGrad = (GradientDrawable) rootView.getBackground();
-            myGrad.setCornerRadius(bannerCorner);
+
+            setClipToOutline(true);
+            setOutlineProvider(new RoundViewOutlineProvider(bannerCorner));
 
             setScaleType(rootView);
             Object url = null;
