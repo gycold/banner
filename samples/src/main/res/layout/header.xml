@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="170dp">
+
+    <com.easyandroid.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:banner_padding_left="25dp"
+        app:banner_padding_right="25dp"
+        app:banner_background_resource="@color/home_gradient_bg_start_color"/>
+
+</RelativeLayout>
+
+

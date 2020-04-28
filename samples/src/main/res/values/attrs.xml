@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义贝塞尔曲线背景-->
+    <declare-styleable name="QuadBezierView">
+        <attr name="startColor2" format="color"/>
+        <attr name="middleColor" format="color"/>
+        <attr name="endColor2" format="color"/>
+        <attr name="percent2" format="float"/>
+    </declare-styleable>
+</resources>

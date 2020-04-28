@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //子模块的混淆文件是通过consumerProguardFiles来指定的
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility = rootProject.ext.jdk["sourceCompatibility"]
+        targetCompatibility = rootProject.ext.jdk["targetCompatibility"]
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly rootProject.ext.dependencies["legacy-support-v4"]
+}
+
+//添加
+publish {
+    userOrg = 'easyandroid'//bintray.com用户名
+    groupId = 'com.easyandroid'//jcenter上的路径
+    artifactId = 'banner'//项目名称
+    publishVersion = '1.0.2'//版本号
+    desc = 'Oh hi, this is a nice description for a project, right?'//描述
+    website = 'https://github.com/gycold/banner.git'//网站
+}
