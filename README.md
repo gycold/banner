@@ -2,8 +2,7 @@
 [![banner](https://api.bintray.com/packages/easyandroid/maven/banner/images/download.svg)](https://bintray.com/easyandroid/maven/banner/_latestVersion)  [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://developer.android.google.cn/) [![SDK](https://img.shields.io/badge/minSdkVersion-15%2B-green.svg)](https://developer.android.com/about/)
 
 + 项目基于[banner](https://github.com/youth5201314/banner)升级改造，扩展了指示器的形状，可动态添加指示器等，sample基于Glide框架最新版本，后期会持续更新
-+ 1.1.0开始，放弃了support库，请使用AndroidX
-+ 内部自带混淆规则，无需在自己的项目中添加规则
++ 2.0.0开始，放弃了support库，请使用AndroidX
 
 ## 使用步骤
 
@@ -11,7 +10,7 @@
 Gradle
 ```groovy
 dependencies{
-    implementation 'com.easyandroid:banner:1.1.0'  //最新版本
+    implementation 'com.easyandroid:banner:2.0.0'  //最新版本
 }
 ```
 

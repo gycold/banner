@@ -17,10 +17,10 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             //子模块的混淆文件是通过consumerProguardFiles来指定的
-            consumerProguardFiles 'proguard-rules.pro'
+//            consumerProguardFiles 'proguard-rules.pro'
         }
     }
 
@@ -45,7 +45,7 @@ publish {
     userOrg = 'easyandroid'//bintray.com用户名
     groupId = 'com.easyandroid'//jcenter上的路径
     artifactId = 'banner'//项目名称
-    publishVersion = '1.1.0'//版本号
+    publishVersion = '2.0.0'//版本号
     desc = 'Oh hi, this is a nice description for a project, right?'//描述
     website = 'https://github.com/gycold/banner.git'//网站
 }
